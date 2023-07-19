@@ -22,7 +22,7 @@ _putchar('0');
 }
 else
 {
-_putchar(' ');
+_putchar(',');
 _putchar(' ');
 if (result < 10)
 {
@@ -31,7 +31,7 @@ _putchar(' ');
 }
 else if (result < 100)
 {
-_putchar(' ');
+_putchar(',');
 }
 _putchar(result + '0');
 }
