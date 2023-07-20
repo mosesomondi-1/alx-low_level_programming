@@ -1,4 +1,4 @@
-#include "man.h"
+#include "main.h"
 /**
  * print_numbers - prints the numbers, from 0 to 9
  * Return: Numbers from 0 to 9
@@ -9,7 +9,7 @@ int n;
 
 for (n = '0'; n <= '9'; n++)
 {
-_putchar(x);
+_putchar(n);
 }
 _putchar('\n');
 }
