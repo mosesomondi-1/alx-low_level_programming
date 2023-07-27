@@ -8,11 +8,11 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int bytes_count;
+	int t;
 
-	for (bytes_count = 0; bytes_count < n && src[bytes_count] != '\0'; bytes_count++)
-		dest[bytes_count] = src[bytes_count];
-	for (; bytes_count < n; bytes_count++)
-		dest[bytes_count] = '\0';
+	for (t = 0; t < n && src[t] != '\0'; t++)
+		dest[t] = src[t];
+	for (; t < n; t++)
+		dest[t] = '\0';
 	return (dest);
 }
