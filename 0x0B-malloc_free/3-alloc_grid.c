@@ -1,84 +1,39 @@
 #include "main.h"
-		
 #include <stdlib.h>
-		
+
 /**
-		
- * str_concat - get ends of input and add together for size
-		
- * @s1: input one to concat
-		
- * @s2: input two to concat
-		
- * Return: concat of s1 and s2
-		
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers
+ * @width: width input
+ * @height: height input
+ * Return: pointer to 2 dimensional array
  */
-		
-char *str_concat(char *s1, char *s2)
-		
+int **alloc_grid(int width, int height)
 {
-		
-	char *conct;
-		
-	int i, ci;
-		
+	int **n;
+	int x, y;
 
-		
-	if (s1 == NULL)
-		
-		s1 = "";
-		
-	if (s2 == NULL)
-		
-		s2 = "";
-		
-
-		
-		i = ci = 0;
-		
-	while (s1[i] != '\0')
-		
-		i++;
-		
-	while (s2[ci] != '\0')
-		
-		ci++;
-		
-	conct = malloc(sizeof(char) * (i + ci + 1));
-		
-
-		
-	if (conct == NULL)
-		
+	if (width <= 0 || height <= 0)
 		return (NULL);
-		
-	i = ci = 0;
-		
-	while (s1[i] != '\0')
-		
-	{
-		
-		conct[i] = s1[i];
-		
-		i++;
-		
-	}
-		
 
-		
-	while (s2[ci] != '\0')
-		
+	n = malloc(sizeof(int *) * height);
+
+	if (n == NULL)
+		return (NULL);
+	for (x = 0; x < height; x++)
 	{
-		
-		conct[i] = s2[ci];
-		
-		i++, ci++;
-		
+		n[x] = malloc(sizeof(int) * width);
+		if (n[x] == NULL)
+		{
+			for (; x >= 0; x--)
+				free(n[x]);
+			free(n);
+			return (NULL);
+		}
 	}
-		
-	conct[i] = '\0';
-		
-	return (conct);
-		
+	for (x = 0; x < height; x++)
+	{
+		for (y = 0; y < width; y++)
+			n[x][y] = 0;
+	}
+	return (n);
 }
-
