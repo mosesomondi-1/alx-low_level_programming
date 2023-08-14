@@ -47,7 +47,7 @@ char *_initialize_array(char *ar, int lar)
 	return (ar);
 }
 
-/**
+n/**
  * _checknum - determines length of the number
  * and checks if number is in base 10.
  * @argv: arguments vector
