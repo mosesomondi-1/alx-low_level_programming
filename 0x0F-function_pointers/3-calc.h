@@ -1,9 +1,9 @@
-#ifndef CALC_H
-#define CALC_H
+#ifndef CALC_H_
+#define CALC_H_
 /**
  * struct op - A struct op
  * @op: The operator
- * @f: The associated function
+ * @f: The  function
  */
 typedef struct op
 {
