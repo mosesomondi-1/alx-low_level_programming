@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * get_op_func - Takes the correct function to perform
+ * get_op_func - Selects the correct function to perform
  * the operation asked by the user
  * @s: The operator passed as argument
  * Return: A pointer to the function corresponding
@@ -19,10 +19,10 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL},
 	};
 
-	int x = 0;
+	int i = 0;
 
-	while (ops[x].op != NULL && *(ops[x].op) != *s)
-		x++;
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
+		i++;
 
-	return (ops[x].f);
+	return (ops[i].f);
 }
