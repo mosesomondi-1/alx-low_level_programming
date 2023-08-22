@@ -3,7 +3,6 @@
 #include <stdarg.h>
 /**
  * print_all - function that prints anything
- * @char: input
  * @format: list of types of arguments passed to the function
  * @...: input
  * Return: 0 (success)
